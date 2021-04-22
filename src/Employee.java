@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ class Employee {
     }
 }
 class EmpList{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int id;
@@ -29,5 +30,19 @@ class EmpList{
 
         ArrayList<Employee> arl = new ArrayList<>();
 
+        for (int i=0;i<5;i++){
+
+            System.out.println("Enter id :- ");
+            id = Integer.parseInt(br.readLine());
+
+            System.out.println("Enter name :- ");
+            name = br.readLine();
+
+            System.out.println("Enter Address :- ");
+            address = br.readLine();
+
+            Employee emp = new Employee(id,name,address);
+            arl.add(emp);
+        }
     }
 }
